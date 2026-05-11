@@ -32,7 +32,16 @@ string getImageSource(string tag)
   return tag.substr(start, end - start);
 }
 
-// string underscoresToSpaces(string str)
+string underscoresToSpaces(string str)
+{
+  for (int i = 0; i < str.length(); i++) {
+    if (str[i] == '_') {
+      str[i] = ' ';
+    }
+  }
+
+  return str;
+}
 
 // int getImageWidth(string tag)
 
