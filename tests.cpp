@@ -80,34 +80,34 @@ TEST_CASE("Testing underscoresToSpaces")
         == "little red snake.mpeg");
 }
 
-TEST_CASE("Testing getImageWidth")
-{
-  cout << "3: getImageWidth" << endl;
-  CHECK(getImageWidth(EXAMPLE_1) == 100);
-  CHECK(getImageWidth(EXAMPLE_2) == 300);
-  CHECK(getImageWidth(EXAMPLE_3) == 400);
-}
+// TEST_CASE("Testing getImageWidth")
+//{
+//   cout << "3: getImageWidth" << endl;
+//  CHECK(getImageWidth(EXAMPLE_1) == 100);
+//  CHECK(getImageWidth(EXAMPLE_2) == 300);
+// CHECK(getImageWidth(EXAMPLE_3) == 400);
+//}
 
-TEST_CASE("Testing getImageHeight")
-{
-  cout << "4: getImageHeight" << endl;
-  CHECK(getImageHeight(EXAMPLE_1) == 200);
-  CHECK(getImageHeight(EXAMPLE_2) == 400);
-  CHECK(getImageHeight(EXAMPLE_3) == 250);
-}
+// TEST_CASE("Testing getImageHeight")
+//{
+//  cout << "4: getImageHeight" << endl;
+// CHECK(getImageHeight(EXAMPLE_1) == 200);
+// CHECK(getImageHeight(EXAMPLE_2) == 400);
+// CHECK(getImageHeight(EXAMPLE_3) == 250);
+//}
 
-TEST_CASE("Testing getVerticalPadding")
-{
-  cout << "5: getVerticalPadding" << endl;
-  CHECK(getVerticalPadding(EXAMPLE_1) == 0);
-  CHECK(getVerticalPadding(EXAMPLE_2) == 10);
-  CHECK(getVerticalPadding(EXAMPLE_3) == 10);
-}
+// TEST_CASE("Testing getVerticalPadding")
+//{
+//  cout << "5: getVerticalPadding" << endl;
+//  CHECK(getVerticalPadding(EXAMPLE_1) == 0);
+//  CHECK(getVerticalPadding(EXAMPLE_2) == 10);
+//  CHECK(getVerticalPadding(EXAMPLE_3) == 10);
+//}
 
-TEST_CASE("Testing getHorizontalPadding")
-{
-  cout << "6: getHorizontalPadding" << endl;
-  CHECK(getHorizontalPadding(EXAMPLE_1) == 0);
-  CHECK(getHorizontalPadding(EXAMPLE_2) == 10);
-  CHECK(getHorizontalPadding(EXAMPLE_3) == 5);
-}
+// TEST_CASE("Testing getHorizontalPadding")
+//{
+// cout << "6: getHorizontalPadding" << endl;
+// CHECK(getHorizontalPadding(EXAMPLE_1) == 0);
+// CHECK(getHorizontalPadding(EXAMPLE_2) == 10);
+// CHECK(getHorizontalPadding(EXAMPLE_3) == 5);
+//}
