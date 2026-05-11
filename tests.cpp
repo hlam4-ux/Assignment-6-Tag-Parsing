@@ -43,7 +43,15 @@ string underscoresToSpaces(string str)
   return str;
 }
 
-// int getImageWidth(string tag)
+int getImageWidth(string tag)
+{
+  int start = tag.find("width = \"") + 7;
+  int end = tag.find("px", start);
+
+  string number = tag.substr(start, end - start);
+
+  return stoi(number);
+}
 
 // int getImageHeight(string tag)
 
@@ -80,13 +88,13 @@ TEST_CASE("Testing underscoresToSpaces")
         == "little red snake.mpeg");
 }
 
-// TEST_CASE("Testing getImageWidth")
-//{
-//   cout << "3: getImageWidth" << endl;
-//  CHECK(getImageWidth(EXAMPLE_1) == 100);
-//  CHECK(getImageWidth(EXAMPLE_2) == 300);
-// CHECK(getImageWidth(EXAMPLE_3) == 400);
-//}
+TEST_CASE("Testing getImageWidth")
+{
+  cout << "3: getImageWidth" << endl;
+  CHECK(getImageWidth(EXAMPLE_1) == 100);
+  CHECK(getImageWidth(EXAMPLE_2) == 300);
+  CHECK(getImageWidth(EXAMPLE_3) == 400);
+}
 
 // TEST_CASE("Testing getImageHeight")
 //{
