@@ -63,7 +63,15 @@ int getImageHeight(string tag)
   return stoi(number);
 }
 
-// int getVerticalPadding(string tag)
+int getVerticalPadding(string tag)
+{
+  int start = tag.find("padding=\"") + 9;
+  int end = tag.find("px", start);
+
+  string number = tag.substr(start, end - start);
+
+  return stoi(number);
+}
 
 // int getHorizontalPadding(string tag)
 
@@ -112,13 +120,13 @@ TEST_CASE("Testing getImageHeight")
   CHECK(getImageHeight(EXAMPLE_3) == 250);
 }
 
-// TEST_CASE("Testing getVerticalPadding")
-//{
-//  cout << "5: getVerticalPadding" << endl;
-//  CHECK(getVerticalPadding(EXAMPLE_1) == 0);
-//  CHECK(getVerticalPadding(EXAMPLE_2) == 10);
-//  CHECK(getVerticalPadding(EXAMPLE_3) == 10);
-//}
+TEST_CASE("Testing getVerticalPadding")
+{
+  cout << "5: getVerticalPadding" << endl;
+  CHECK(getVerticalPadding(EXAMPLE_1) == 0);
+  CHECK(getVerticalPadding(EXAMPLE_2) == 10);
+  CHECK(getVerticalPadding(EXAMPLE_3) == 10);
+}
 
 // TEST_CASE("Testing getHorizontalPadding")
 //{
