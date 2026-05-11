@@ -78,7 +78,19 @@ int getVerticalPadding(string tag)
   return stoi(number);
 }
 
-// int getHorizontalPadding(string tag)
+int getHorizontalPadding(string tag)
+{
+  int start = tag.find(" ");
+  if (start == -1) {
+    return 0;
+  }
+  start = start + 1;
+  int end = tag.find("px", start);
+
+  string number = tag.substr(start, end - start);
+
+  return stoi(number);
+}
 
 //-----------------------------------------------------------------------------------
 // Testing code
