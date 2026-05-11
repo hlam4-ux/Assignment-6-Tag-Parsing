@@ -45,7 +45,7 @@ string underscoresToSpaces(string str)
 
 int getImageWidth(string tag)
 {
-  int start = tag.find("width = \"") + 7;
+  int start = tag.find("width=\"") + 7;
   int end = tag.find("px", start);
 
   string number = tag.substr(start, end - start);
