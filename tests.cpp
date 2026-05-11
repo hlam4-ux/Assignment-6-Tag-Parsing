@@ -65,7 +65,12 @@ int getImageHeight(string tag)
 
 int getVerticalPadding(string tag)
 {
-  int start = tag.find("padding=\"") + 9;
+  int start = tag.find("padding=\"");
+
+  if (start == -1) {
+    return 0;
+  }
+  start = start + 9;
   int end = tag.find("px", start);
 
   string number = tag.substr(start, end - start);
