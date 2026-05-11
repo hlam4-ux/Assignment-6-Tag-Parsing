@@ -145,10 +145,10 @@ TEST_CASE("Testing getVerticalPadding")
   CHECK(getVerticalPadding(EXAMPLE_3) == 10);
 }
 
-// TEST_CASE("Testing getHorizontalPadding")
-//{
-// cout << "6: getHorizontalPadding" << endl;
-// CHECK(getHorizontalPadding(EXAMPLE_1) == 0);
-// CHECK(getHorizontalPadding(EXAMPLE_2) == 10);
-// CHECK(getHorizontalPadding(EXAMPLE_3) == 5);
-//}
+TEST_CASE("Testing getHorizontalPadding")
+{
+  cout << "6: getHorizontalPadding" << endl;
+  CHECK(getHorizontalPadding(EXAMPLE_1) == 0);
+  CHECK(getHorizontalPadding(EXAMPLE_2) == 10);
+  CHECK(getHorizontalPadding(EXAMPLE_3) == 5);
+}
