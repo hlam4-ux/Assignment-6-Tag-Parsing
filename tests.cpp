@@ -54,13 +54,13 @@ const string EXAMPLE_3 = "<image width=\"400px\" height=\"250px\" padding=\"10px
 // clang-format on
 // "// clang-format on" turns auto-formatting back on
 
-// TEST_CASE("Testing getImageSource")
-// {
-//   cout << "1: getImageSource" << endl;
-//   CHECK(getImageSource(EXAMPLE_1) == "puppy.jpg");
-//   CHECK(getImageSource(EXAMPLE_2) == "cat_pounce.gif");
-//   CHECK(getImageSource(EXAMPLE_3) == "little_red_snake.mpeg");
-// }
+TEST_CASE("Testing getImageSource")
+{
+  cout << "1: getImageSource" << endl;
+  CHECK(getImageSource(EXAMPLE_1) == "puppy.jpg");
+  CHECK(getImageSource(EXAMPLE_2) == "cat_pounce.gif");
+  CHECK(getImageSource(EXAMPLE_3) == "little_red_snake.mpeg");
+}
 
 // TEST_CASE("Testing underscoresToSpaces")
 // {
