@@ -1,53 +1,104 @@
+//----------------------------------------------------------
+// CS161 Assignment Starter Code
+// Copyright Andrew Scholer (ascholer@chemeketa.edu)
+// Neither this code, nor any works derived from it
+//    may be republished without approval.
+//----------------------------------------------------------
+
+// Bring in unit testing code and tell it to build a main function
+// If you have multiple unit test files, only one should have this define
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
+
 #include "doctest.h"
 
+// Use Approx from doctest without saying doctest::Approx
 using doctest::Approx;
 
-int squareDifference(int a, int b)
+//-----------------------------------------------------------------------------------
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+// Functions to write.
+// You do NOT need to write doxygen comments for these. You may add extra helper
+// functions if you want. Work on them one at a time.
+
+string getImageSource(string tag)
 {
-  return (a - b) * (a - b);
+  int start = tag.find("source=\"") + 8;
+  int end = tag.find("\"", start);
+
+  return tag.substr(start, end - start);
 }
 
-double distance(int x1, int y1, int x2, int y2)
-{
-  return sqrt(squareDifference(x1, x2) + squareDifference(y1, y2));
-}
+// string underscoresToSpaces(string str)
 
-TEST_CASE("squareDifference")
-{
-  // if a CHECK fails, the test case as a whole will fail, but still
-  // try the rest of the assertions.
-  CHECK(squareDifference(1, 4) == 9);
+// int getImageWidth(string tag)
 
-  // if a REQUIRE fails, the rest of the assertions in this
-  // test case aren't even worth trying---just move on to the next
-  // test case.
-  REQUIRE(squareDifference(1, 4) == 9);
+// int getImageHeight(string tag)
 
-  // Test that ordering does not matter
-  CHECK(squareDifference(4, 1) == 9);
+// int getVerticalPadding(string tag)
 
-  // Test that negatives are handled
-  int answer3 = squareDifference(-2, -6);
-  CHECK(answer3 == 16);
-}
+// int getHorizontalPadding(string tag)
 
-TEST_CASE("distance")
-{
-  int x1 = 0, y1 = 0;
-  int x2 = 3, y2 = 4;
-  int x3 = -2, y3 = -2;
+//-----------------------------------------------------------------------------------
+// Testing code
 
-  // Approx sees if a double value is "close enough" to believe that any
-  // difference is based on rounding error.  Always test doubles using
-  // Approx.  It only exists in unit tests---do not use in normal code.
-  CHECK(distance(x1, y1, x2, y2) == Approx(5.0));
+// The line "// clang-format off" below turns off auto-formatting
+// That will keep the example strings from being reformatted to multiple lines
+// clang-format off
+const string EXAMPLE_1 = "<image source=\"puppy.jpg\" width=\"100px\" height=\"200px\">";
+const string EXAMPLE_2 = "<image source=\"cat_pounce.gif\" height=\"400px\" width=\"300px\" padding=\"10px\">";
+const string EXAMPLE_3 = "<image width=\"400px\" height=\"250px\" padding=\"10px 5px\" source=\"little_red_snake.mpeg\">";
+// clang-format on
+// "// clang-format on" turns auto-formatting back on
 
-  // Check reverse direction
-  CHECK(distance(x2, y2, x1, y1) == Approx(5.0));
+// TEST_CASE("Testing getImageSource")
+// {
+//   cout << "1: getImageSource" << endl;
+//   CHECK(getImageSource(EXAMPLE_1) == "puppy.jpg");
+//   CHECK(getImageSource(EXAMPLE_2) == "cat_pounce.gif");
+//   CHECK(getImageSource(EXAMPLE_3) == "little_red_snake.mpeg");
+// }
 
-  // Test some negative coordinate values
-  double answer2 = distance(x1, y1, x3, y3);
-  double answer2Desired = 2 * sqrt(2);
-  CHECK(answer2 == Approx(answer2Desired));
-}
+// TEST_CASE("Testing underscoresToSpaces")
+// {
+//   cout << "2: underscoresToSpaces" << endl;
+//   CHECK(underscoresToSpaces("puppy.jpg") == "puppy.jpg");
+//   CHECK(underscoresToSpaces("cat_pounce.gif") == "cat pounce.gif");
+//   CHECK(underscoresToSpaces("little_red_snake.mpeg")
+//         == "little red snake.mpeg");
+// }
+
+// TEST_CASE("Testing getImageWidth")
+// {
+//   cout << "3: getImageWidth" << endl;
+//   CHECK(getImageWidth(EXAMPLE_1) == 100);
+//   CHECK(getImageWidth(EXAMPLE_2) == 300);
+//   CHECK(getImageWidth(EXAMPLE_3) == 400);
+// }
+
+// TEST_CASE("Testing getImageHeight")
+// {
+//   cout << "4: getImageHeight" << endl;
+//   CHECK(getImageHeight(EXAMPLE_1) == 200);
+//   CHECK(getImageHeight(EXAMPLE_2) == 400);
+//   CHECK(getImageHeight(EXAMPLE_3) == 250);
+// }
+
+// TEST_CASE("Testing getVerticalPadding")
+// {
+//   cout << "5: getVerticalPadding" << endl;
+//   CHECK(getVerticalPadding(EXAMPLE_1) == 0);
+//   CHECK(getVerticalPadding(EXAMPLE_2) == 10);
+//   CHECK(getVerticalPadding(EXAMPLE_3) == 10);
+// }
+
+// TEST_CASE("Testing getHorizontalPadding")
+// {
+//   cout << "6: getHorizontalPadding" << endl;
+//   CHECK(getHorizontalPadding(EXAMPLE_1) == 0);
+//   CHECK(getHorizontalPadding(EXAMPLE_2) == 10);
+//   CHECK(getHorizontalPadding(EXAMPLE_3) == 5);
+// }
