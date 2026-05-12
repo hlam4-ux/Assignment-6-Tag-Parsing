@@ -80,11 +80,20 @@ int getVerticalPadding(string tag)
 
 int getHorizontalPadding(string tag)
 {
-  int start = tag.find(" ");
+  int start = tag.find("padding=\"");
   if (start == -1) {
     return 0;
   }
-  start = start + 1;
+  start = start + 9;
+  int space = tag.find(" ", start);
+
+  if (space == -1) {
+    int end = tag.find("px", start);
+    string number = tag.substr(start, end - start);
+    return stoi(number);
+  }
+
+  start = space + 1;
   int end = tag.find("px", start);
 
   string number = tag.substr(start, end - start);
