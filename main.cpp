@@ -101,4 +101,10 @@ int main()
 
   cout << "Tag:" << tag << endl;
   cout << "Image file:" << getImageSource(tag) << endl;
+  cout << "Image description:" << underscoresToSpaces(getImageSource(tag))
+       << endl;
+  cout << "width:" << getImageWidth(tag) << endl;
+  cout << "height" << getImageHeight(tag) << endl;
+  cout << "Vertical padding:" << getVerticalPadding(tag) << endl;
+  cout << "Horizontal padding:" << getHorizontalPadding(tag) << endl;
 }
