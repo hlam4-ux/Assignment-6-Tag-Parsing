@@ -107,4 +107,9 @@ int main()
   cout << "height" << getImageHeight(tag) << endl;
   cout << "Vertical padding:" << getVerticalPadding(tag) << endl;
   cout << "Horizontal padding:" << getHorizontalPadding(tag) << endl;
+
+  int finalWidth = getImageWidth(tag) + getHorizontalPadding(tag) * 2;
+  int finalHeight = getImageHeight(tag) + getVerticalPadding(tag) * 2;
+
+  cout << "final dimensions:" << finalWidth << "x" << finalHeight << endl;
 }
